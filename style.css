@@ -1,0 +1,23 @@
+body {
+    font: 18px/2 "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+#header h1 {
+    text-align: center;
+}
+
+.wp {
+    margin: 0 auto;
+    width: 960px;
+}
+a:link {
+    text-decoration: none;
+}
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.list li a {
+    color: #333;
+}
