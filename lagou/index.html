@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>仿拉勾网图片列表特效</title>
+    <link rel="stylesheet" href="../common.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="center">仿拉勾网图片列表特效</h1>
+    <div class="wp">
+        <ul class="list">
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/image1/M00/35/53/CgYXBlWbe4iAMxyZAACI2Rf4jq8151.jpg" alt="图片1" width="120" height="">
+                    <div class="info">图片1</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/image1/M00/44/62/CgYXBlXVaZiABoEhAAATVtgrHnc431.png" alt="图片1" width="120" height="">
+                    <div class="info">图片2</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/image2/M00/0A/46/CgpzWlYUz3uAGd1OAADsQr0Jnm0126.jpg" alt="图片1" width="120" height="">
+                    <div class="info">图片3</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/i/image/M00/05/7A/CgqKkVbK2-eAFYerAABDGMt3xpQ029.jpg" alt="图片1" width="120" height="">
+                    <div class="info">图片4</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/image1/M00/00/09/CgYXBlTUWBGAUC0FAACvyu2GcwA010.jpg" alt="图片1" width="120" height="">
+                    <div class="info">图片5</div>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <img src="http://www.lagou.com/image1/M00/00/10/Cgo8PFTUWC2AF2LkAACsG2Llylo894.jpg" alt="图片1" width="120" height="">
+                    <div class="info"><span>图片6</span></div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="jquery.slideImg.js"></script>
+    <script>
+        $('.list a').slideImg({
+            width: 120,
+            height: 120,
+            slideBlock: '.info'
+        });
+    </script>
+</body>
+</html>
