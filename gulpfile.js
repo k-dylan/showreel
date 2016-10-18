@@ -12,8 +12,9 @@ gulp.task('server', function () {
 });
 
 gulp.task('watch', function () {
-    gulp.watch('./**', function (event) {
+    gulp.watch('./**/*', function (event) {
         gulp.src(event.path)
             .pipe(connect.reload());
     });
 })
+
