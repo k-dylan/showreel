@@ -4,11 +4,10 @@ body {
 a:link {
     text-decoration: none;
 }
-ul {
-    list-style: none;
-    padding: 0;
-}
 
-.list li a {
+.list .a {
     color: #333;
+}
+.list .a:hover {
+    color: #03a9f4
 }
