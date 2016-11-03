@@ -1,0 +1,35 @@
+
+.dome {
+  width: 430px;
+  height: 430px;
+  margin: 0 auto;
+  position:relative;
+}
+
+.pic {
+  width: 430px;
+  height: 430px;
+  position: relative;   
+  overflow: hidden;
+  border: 1px solid #ccc;
+  cursor: move;
+  margin-right: 10px;  
+}
+.pic img {
+  width: 100%;
+}
+.pic .hot {
+  position: absolute;
+  background: url('img/hot-bg.png');
+}
+
+.big {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  overflow: hidden;
+  border: 2px solid #ccc;
+  top: 0;
+  left: 450px;
+}
+

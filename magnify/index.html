@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>仿淘宝图片放大镜效果</title>
+  <link rel="stylesheet" href="../common.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1 class="center">仿淘宝图片放大镜效果</h1>
+  <div class="dome" id="dome">
+    <div class="pic" id="pic">
+      <img src="img/small.jpg" alt="小图">
+    </div>
+    <div id="big" class="big">
+      <img src="img/big.jpg" alt="大图">
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var dome = document.getElementById('dome');
+      var pic = document.getElementById('pic');
+      var hot = document.createElement('span');
+      var big = document.getElementById('big');
+      var bigImg = big.getElementsByTagName('img')[0];
+
+      var picWidth = pic.offsetWidth;
+      var picHeight = pic.offsetHeight;
+      var bigImgWidth = bigImg.width;
+      var bigImgHeight = bigImg.height;
+        
+      var hotWidth = (picWidth / bigImgWidth) * big.offsetWidth;
+      var hotHeight = (picHeight / bigImgHeight) * big.offsetHeight;
+
+      hot.style.width = hotWidth + 'px';
+      hot.style.height = hotHeight + 'px';  
+      hot.className = "hot";
+      hot.style.display = 'none'; 
+      pic.appendChild(hot);
+
+      bigImg.style.position = 'absolute';
+
+      pic.onmouseover = function (e) {
+        hot.style.display = 'block';
+        big.style.display = 'block';
+      }
+
+      pic.onmousemove = function (e) {
+        e = e || window.event;
+        var left = e.clientX - dome.offsetLeft - (hotWidth / 2);
+        var top = e.clientY - dome.offsetTop - (hotHeight / 2);
+
+        if(top < 0){
+          top = 0;
+        } else if(top > pic.offsetHeight - hotHeight) {
+          top = pic.offsetHeight - hotHeight
+        }
+        if(left < 0){
+          left = 0;
+        } else if(left > pic.offsetWidth - hotWidth) {
+          left = pic.offsetWidth - hotWidth
+        }
+
+        hot.style.left = left +  'px';
+        hot.style.top = top + 'px';
+        bigImg.style.top = - (top * (bigImg.width / picWidth )) + 'px';
+        bigImg.style.left = - (left * (bigImg.height / picHeight)) + 'px';
+      }
+
+      pic.onmouseout = function (e) {
+        hot.style.display = 'none';
+        big.style.display = 'none';
+      }
+      
+    })();
+    
+
+  </script>
+</body>
+</html>
